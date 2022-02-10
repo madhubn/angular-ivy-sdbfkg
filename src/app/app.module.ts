@@ -7,7 +7,7 @@ import { HelloComponent } from './hello.component';
 import { AppService } from './app.service';
 import { TreeComponent } from './tree/tree.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable/lib/ngx-datatable.module';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   imports: [
