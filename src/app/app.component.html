@@ -1,6 +1,49 @@
-<hello name="{{ name }}"></hello>
-<p>Start editing to see some magic happen :)</p>
-
-<h1>Convert Json to CSV file and Download it in the .csv format</h1>
-
-<app-tree></app-tree>
+<div>
+  <ngx-datatable
+    class="material fullscreen"
+    style="top: 52px"
+    [columnMode]="ColumnMode.force"
+    [headerHeight]="50"
+    [footerHeight]="0"
+    [rowHeight]="50"
+    [scrollbarV]="true"
+    [scrollbarH]="true"
+    [rows]="rows"
+    [treeFromRelation]="'parentId'"
+    [treeToRelation]="'id'"
+    (treeAction)="onTreeAction($event)"
+    style="height: 1000px;"
+  >
+    <ngx-datatable-column name="Id" [width]="80"></ngx-datatable-column>
+    <ngx-datatable-column
+      name="Name"
+      [isTreeColumn]="true"
+      [width]="300"
+      [treeLevelIndent]="20"
+    >
+      <ng-template ngx-datatable-tree-toggle let-tree="cellContext">
+        <button
+          [disabled]="tree.treeStatus === 'disabled'"
+          (click)="tree.onTreeAction()"
+        >
+          <span *ngIf="tree.treeStatus === 'loading'"> ... </span>
+          <span *ngIf="tree.treeStatus === 'collapsed'"> ↑ </span>
+          <span *ngIf="tree.treeStatus === 'expanded'"> ↓ </span>
+          <span *ngIf="tree.treeStatus === 'disabled'"> ⃠ </span>
+        </button>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Gender"></ngx-datatable-column>
+    <ngx-datatable-column name="Age"></ngx-datatable-column>
+    <ngx-datatable-column
+      name="City"
+      [width]="300"
+      prop="address.city"
+    ></ngx-datatable-column>
+    <ngx-datatable-column
+      name="State"
+      [width]="300"
+      prop="address.state"
+    ></ngx-datatable-column>
+  </ngx-datatable>
+</div>

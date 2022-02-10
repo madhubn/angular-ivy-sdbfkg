@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ColumnMode } from '@swimlane/ngx-datatable';
 
 @Component({
   selector: 'app-tree',
@@ -10,7 +11,7 @@ export class TreeComponent {
   rows = [];
   lastIndex = 15;
 
-  ColumnMode: any;
+  ColumnMode = ColumnMode;
 
   constructor(private cd: ChangeDetectorRef) {
     this.fetch((data) => {
@@ -29,6 +30,7 @@ export class TreeComponent {
 
     req.onload = () => {
       setTimeout(() => {
+        console.log('req.response', req.response);
         cb(JSON.parse(req.response));
       }, 500);
     };
