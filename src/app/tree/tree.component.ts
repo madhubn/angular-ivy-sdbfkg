@@ -29,7 +29,7 @@ export class TreeComponent {
 
     req.onload = () => {
       setTimeout(() => {
-        // cb(JSON.parse(req.response));
+        cb(JSON.parse(req.response));
       }, 500);
     };
 
