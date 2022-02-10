@@ -1,35 +1,3 @@
-.main-content {
-  margin-top: 8px;
-  margin-bottom: 8px;
-  // border: solid 1px #CCC;
-  border-radius: 5px;
-  background-color: #efefef;
-  padding: 10px;
-  .nav-content {
-    background-color: #fff;
-    border-radius: 5px;
-  }
-  .project-details {
-    .project-heading {
-      font-weight: bold;
-      font-size: 18px;
-    }
-    .project-description {
-      font-weight: normal;
-      font-size: 13px;
-    }
-  }
-}
-app-inputs {
-  tr.even {
-    td:last-child {
-      background: green;
-    }
-  }
-}
-table tr th:first-child {
-  width: 90px;
-}
-table tr td:first-child span.inner-content-table-cell {
-  text-align: left;
-}
+@import '~@swimlane/ngx-datatable/index.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+@import '~@swimlane/ngx-datatable/themes/material.scss';
